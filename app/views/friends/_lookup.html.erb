@@ -1,7 +1,7 @@
 <div id ="friend-lookup">
 <h3> Search for friends</h3>
 
-<%= form_tag search_friends_path, remote: true, method: :get, id: "friend-lookup-form" do%>
+<%= form_tag search_friends_path, remote: true, method: :get, id: "friend-lookup-form" do %>
 <div class="form-group row no-padding text-center col-md-12">
 	<div class="col-md-10">
 		<%= text_field_tag :search_param, params[:search_param], 
@@ -27,8 +27,8 @@
    <tbody>
     <% @users.each do |user| %>
     <tr>
-    <td><strong>Symbol:</Strong> <%= @user.full_name %>
-    <td><strong>Email:</Strong> <%= @user.email %>
+    <td><strong>Name:</Strong> <%= user.full_name %>
+    <td><strong>Email:</Strong> <%= user.email %>
     
     <td><Strong>Profile: </strong> <%= link_to "View profile", user_path(user),
     class: "btn btn-success btn-xs" %>
@@ -43,14 +43,16 @@
 </td>
 </tr>
 <% end %>
+<%  end %>
 </tbody>
 </table>
 </div>
 <% else%>
 <p class="lead col-md-12">
     No people match this search criteria
-</p><% end %>
-   <% end %>
+</p>
+<% end %>
+<% end %>
 
 <div id= "friend-lookup-errors"></div>
 </div>
